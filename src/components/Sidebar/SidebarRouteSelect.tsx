@@ -12,7 +12,7 @@ export const SidebarRouteSelect = () => {
   return (
     <div className="space-y-1">
       <SidebarRoute Icon={FiHome} selected={currentPath === "/dashboard"} title="Dashboard" />
-      <SidebarRoute Icon={FiUsers} selected={currentPath === "/team"} title="Team" />
+      <SidebarRoute Icon={FiUsers} selected={currentPath === "/manageteam"} title="Manage Team" />
       <SidebarRoute Icon={FiSettings} selected={currentPath === "/settings"} title="Settings" />
     </div>
   );
@@ -35,7 +35,7 @@ const SidebarRoute = ({
         : "hover:bg-stone-200 bg-transparent text-stone-500 shadow-none"
         }`}
       onClick={() => {
-        navigate(title.toLowerCase());
+        navigate(((title.split(' ')).join('')).toLowerCase());
       }}
     >
       <Icon className={selected ? "text-violet-500" : ""} />
