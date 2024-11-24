@@ -1,7 +1,9 @@
+import { Dashboard } from "./components/Dashboard/Dashboard";
+
 export default function App() {
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <main className="grid gap-4 p-4 grid-cols-1">
+      <Dashboard />
+    </main>
   )
 }
