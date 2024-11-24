@@ -1,6 +1,6 @@
-import { TopBar } from "./TopBar";
-import { StatCards } from "./StatCards";
-import { UserTable } from "./UserTable";
+import { TopBar } from "../components/Dashboard/TopBar";
+import { StatCards } from "../components/Dashboard/StatCards";
+import { UserTable } from "../components/Dashboard/UserTable";
 
 export const Dashboard = () => {
   return (

@@ -133,13 +133,13 @@ const TableRow = ({
       <td className="p-1.5">{role}</td>
       <td className="w-10">
         <div className="flex items-center justify-between">
-          <button className="rounded-l px-2 text-left py-1.5 w-full text-sm bg-blue-400 hover:bg-blue-500 transition-colors"
+          <button className="rounded-l px-2 text-left py-1.5 w-full text-sm bg-purple-100 text-purple-700 hover:bg-purple-200 transition-colors"
             onClick={() => {
               setOpen(!open);
             }}>
             Modify
           </button>
-          <button className="rounded-r px-2 text-left py-1.5 w-full text-sm bg-red-500 hover:bg-red-600 transition-colors">
+          <button className="rounded-r px-2 text-left py-1.5 w-full text-sm bg-red-100 text-red-700 hover:bg-red-200 transition-colors">
             Delete
           </button>
         </div>
