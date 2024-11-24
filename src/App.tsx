@@ -4,7 +4,8 @@ import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { Dashboard } from "./pages/Dashboard";
 import { Sidebar } from "./components/Sidebar/Sidebar";
 import Settings from "./pages/Setting";
-import ManageTeam from "./pages/Team";
+import { UserTable } from "./components/Dashboard/UserTable";
+import RoleTable from "./components/Dashboard/RoleTable";
 
 export default function App() {
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -41,9 +42,11 @@ export default function App() {
       </div>
       <div className="flex-1 p-4">
         <Routes>
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/dashboard" element={<Dashboard />}>
+            <Route path="users" element={<UserTable />} />
+            <Route path="roles" element={<RoleTable />} />
+          </Route>
           <Route path="/settings" element={<Settings />} />
-          <Route path="/manageteam" element={<ManageTeam />} />
         </Routes>
       </div>
     </main>

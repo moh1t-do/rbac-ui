@@ -11,9 +11,9 @@ export const SidebarRouteSelect = () => {
   const currentPath = location.pathname;
   return (
     <div className="space-y-1">
-      <SidebarRoute Icon={FiHome} selected={currentPath === "/dashboard"} title="Dashboard" />
-      <SidebarRoute Icon={FiUsers} selected={currentPath === "/manageteam"} title="Manage Team" />
-      <SidebarRoute Icon={FiSettings} selected={currentPath === "/settings"} title="Settings" />
+      <SidebarRoute Icon={FiUsers} selected={currentPath === "/dashboard/users"} title="Users" path="/dashboard/users" />
+      <SidebarRoute Icon={FiUsers} selected={currentPath === "/dashboard/roles"} title="Roles" path="/dashboard/roles" />
+      <SidebarRoute Icon={FiSettings} selected={currentPath === "/settings"} title="Settings" path="settings" />
     </div>
   );
 };
@@ -22,10 +22,12 @@ const SidebarRoute = ({
   selected,
   Icon,
   title,
+  path,
 }: {
   selected: boolean;
   Icon: IconType;
   title: string;
+  path: string;
 }) => {
   const navigate = useNavigate();
   return (
@@ -35,7 +37,7 @@ const SidebarRoute = ({
         : "hover:bg-stone-200 bg-transparent text-stone-500 shadow-none"
         }`}
       onClick={() => {
-        navigate(((title.split(' ')).join('')).toLowerCase());
+        navigate(path);
       }}
     >
       <Icon className={selected ? "text-violet-500" : ""} />

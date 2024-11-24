@@ -1,6 +1,6 @@
+import { Outlet } from "react-router"
 import { TopBar } from "../components/Dashboard/TopBar";
 import { StatCards } from "../components/Dashboard/StatCards";
-import { UserTable } from "../components/Dashboard/UserTable";
 
 export const Dashboard = () => {
   return (
@@ -8,7 +8,7 @@ export const Dashboard = () => {
       <TopBar />
       <div className="px-4 grid gap-3 grid-cols-12">
         <StatCards />
-        <UserTable />
+        <Outlet />
       </div>
     </div>
   );

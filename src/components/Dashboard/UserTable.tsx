@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { FiUser, FiArrowLeft, FiArrowRight } from "react-icons/fi";
+import { FiUser, FiArrowLeft, FiArrowRight, FiEdit, FiDelete, FiUserPlus } from "react-icons/fi";
 import mockusers from "../../assets/mockUsers.json";
 import { Link } from "react-router";
 
@@ -17,8 +17,6 @@ interface TableRowProps extends IUser {
 
 export const UserTable = () => {
   const [users, setUsers] = useState<IUser[]>();
-  const [filterUsers, setFilterUsers] = useState<IUser[]>();
-  const [search, setsearch] = useState<string>("");
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [usersPerPage, setUsersPerPage] = useState<number>(10);
   const [totalUsers, setTotalUsers] = useState<number>(0);
@@ -37,21 +35,6 @@ export const UserTable = () => {
     return setCurrentPage(currentPage - 1);
   };
 
-  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setsearch(e.target.value);
-  }
-
-  const handleFilter = () => {
-    const fuser = users?.filter(({ email }) => email.includes(search));
-    setCurrentPage(1);
-    setFilterUsers(fuser);
-  };
-
-  useEffect(() => {
-    const timerid = setTimeout(handleFilter, 500);
-    return () => clearTimeout(timerid);
-  }, [search]);
-
   useEffect(() => {
     setTotalUsers(mockusers.length);
     const tuser = mockusers.slice((currentPage - 1) * usersPerPage, currentPage * usersPerPage);
@@ -65,17 +48,18 @@ export const UserTable = () => {
         <h3 className="flex items-center gap-1.5 font-medium">
           <FiUser /> User Management
         </h3>
+        <button className="flex items-center justify-between rounded px-2 outline gap-2 outline-purple-500">
+          <FiUserPlus />
+          Add
+        </button>
       </div>
-      {/* <div>
-        <input className="mb-4 text-sm outline outline-[0.5px] px-2 py-1 rounded-sm outline-slate-400" placeholder="Search" onInput={handleSearch}></input>
-      </div> */}
       <hr className="mb-4" />
       <div className="overflow-x-scroll">
         <table className="w-full table-auto">
           <TableHead />
           <tbody>
             {
-              (filterUsers || users)?.map((user, index) => (
+              (users)?.map((user, index) => (
                 <TableRow
                   key={user.id}
                   id={user.id}
@@ -110,7 +94,7 @@ const TableHead = () => {
         <th className="text-start p-1.5">First Name</th>
         <th className="text-start p-1.5">Last Name</th>
         <th className="text-start p-1.5">Role</th>
-        {/* <th className="text-start p-1.5">Actions</th> */}
+        <th className="text-start p-1.5">Actions</th>
       </tr>
     </thead>
   );
@@ -127,26 +111,23 @@ const TableRow = ({
   return (
     <tr className={order % 2 ? "bg-stone-100 text-sm" : "text-sm"}>
       <td className="p-1.5">
-        <Link to={`/manageteam?id=${id}`} className="text-purple-700 underline">
+        <Link to={`mailto:${email}`} className="text-purple-700 underline">
           {email}
         </Link>
       </td>
       <td className="p-1.5">{firstName}</td>
       <td className="p-1.5">{lastName}</td>
       <td className="p-1.5">{role}</td>
-      {/* <td className="w-10">
+      <td className="w-10">
         <div className="flex items-center justify-between">
-          <button className="rounded-l px-2 text-left py-1.5 w-full text-sm bg-purple-100 text-purple-700 hover:bg-purple-200 transition-colors"
-            onClick={() => {
-              setOpen(!open);
-            }}>
-            Modify
+          <button className="text-purple-500">
+            <FiEdit size={20} />
           </button>
-          <button className="rounded-r px-2 text-left py-1.5 w-full text-sm bg-red-100 text-red-700 hover:bg-red-200 transition-colors">
-            Delete
+          <button className="text-red-500">
+            <FiDelete size={20} />
           </button>
         </div>
-      </td> */}
+      </td>
     </tr>
   );
 };
