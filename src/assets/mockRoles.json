@@ -1,0 +1,107 @@
+[
+    {
+        "id": 1,
+        "name": "Manager",
+        "activeUsers": 14,
+        "inactiveUsers": 2,
+        "totalUsers": 16
+    },
+    {
+        "id": 2,
+        "name": "Developer",
+        "activeUsers": 10,
+        "inactiveUsers": 4,
+        "totalUsers": 14
+    },
+    {
+        "id": 3,
+        "name": "DevOps Engineer",
+        "activeUsers": 20,
+        "inactiveUsers": 1,
+        "totalUsers": 21
+    },
+    {
+        "id": 4,
+        "name": "Support",
+        "activeUsers": 6,
+        "inactiveUsers": 1,
+        "totalUsers": 7
+    },
+    {
+        "id": 5,
+        "name": "Researcher",
+        "activeUsers": 19,
+        "inactiveUsers": 3,
+        "totalUsers": 22
+    },
+    {
+        "id": 6,
+        "name": "Scrum Master",
+        "activeUsers": 17,
+        "inactiveUsers": 4,
+        "totalUsers": 21
+    },
+    {
+        "id": 7,
+        "name": "Designer",
+        "activeUsers": 7,
+        "inactiveUsers": 2,
+        "totalUsers": 9
+    },
+    {
+        "id": 8,
+        "name": "Admin",
+        "activeUsers": 18,
+        "inactiveUsers": 3,
+        "totalUsers": 21
+    },
+    {
+        "id": 9,
+        "name": "Product Manager",
+        "activeUsers": 6,
+        "inactiveUsers": 4,
+        "totalUsers": 10
+    },
+    {
+        "id": 10,
+        "name": "QA Engineer",
+        "activeUsers": 12,
+        "inactiveUsers": 4,
+        "totalUsers": 16
+    },
+    {
+        "id": 11,
+        "name": "Tester",
+        "activeUsers": 8,
+        "inactiveUsers": 2,
+        "totalUsers": 10
+    },
+    {
+        "id": 12,
+        "name": "Data Scientist",
+        "activeUsers": 19,
+        "inactiveUsers": 3,
+        "totalUsers": 22
+    },
+    {
+        "id": 13,
+        "name": "HR",
+        "activeUsers": 17,
+        "inactiveUsers": 4,
+        "totalUsers": 21
+    },
+    {
+        "id": 14,
+        "name": "Consultant",
+        "activeUsers": 9,
+        "inactiveUsers": 4,
+        "totalUsers": 13
+    },
+    {
+        "id": 15,
+        "name": "Analyst",
+        "activeUsers": 9,
+        "inactiveUsers": 2,
+        "totalUsers": 11
+    }
+]
