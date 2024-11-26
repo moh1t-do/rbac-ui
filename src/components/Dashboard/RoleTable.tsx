@@ -17,7 +17,7 @@ interface TableRowProps extends Omit<IRole, 'id'> {
 export const RoleTable = () => {
     const [roles, setRoles] = useState<IRole[]>();
     const [currentPage, setCurrentPage] = useState<number>(1);
-    const [totalRolesPerPage, setTotalRolesPerPage] = useState<number>(5);
+    const [totalRolesPerPage] = useState<number>(5);
     const [totalRoles, setTotalRoles] = useState<number>(0);
 
     const handleNextPage = () => {

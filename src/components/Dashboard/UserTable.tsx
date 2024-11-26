@@ -18,7 +18,7 @@ interface TableRowProps extends Omit<IUser, 'id'> {
 export const UserTable = () => {
   const [users, setUsers] = useState<IUser[]>();
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const [totalUsersPerpage, setTotalUsersPerpage] = useState<number>(5);
+  const [totalUsersPerpage] = useState<number>(5);
   const [totalUsers, setTotalUsers] = useState<number>(0);
 
   const handleNextPage = () => {
