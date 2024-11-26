@@ -1,10 +1,6 @@
 import { useNavigate, useLocation } from "react-router";
 import { IconType } from "react-icons";
-import {
-  FiHome,
-  FiSettings,
-  FiUsers,
-} from "react-icons/fi";
+import { FiUsers, FiServer, FiSettings } from "react-icons/fi";
 
 export const SidebarRouteSelect = () => {
   const location = useLocation();
@@ -12,7 +8,7 @@ export const SidebarRouteSelect = () => {
   return (
     <div className="space-y-1">
       <SidebarRoute Icon={FiUsers} selected={currentPath === "/dashboard/users"} title="Users" path="/dashboard/users" />
-      <SidebarRoute Icon={FiUsers} selected={currentPath === "/dashboard/roles"} title="Roles" path="/dashboard/roles" />
+      <SidebarRoute Icon={FiServer} selected={currentPath === "/dashboard/roles"} title="Roles" path="/dashboard/roles" />
       <SidebarRoute Icon={FiSettings} selected={currentPath === "/settings"} title="Settings" path="settings" />
     </div>
   );

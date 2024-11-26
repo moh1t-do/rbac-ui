@@ -1,6 +1,6 @@
-import { AccountToggle } from "./AccountToggle";
-import { Search } from "./Search";
-import { SidebarRouteSelect } from "./SidebarRouteSelect";
+import { AccountToggle } from "./index";
+import { Search } from "./index";
+import { SidebarRouteSelect } from "./index";
 
 export const Sidebar = () => {
   return (
